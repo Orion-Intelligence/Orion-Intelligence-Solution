@@ -1,0 +1,146 @@
+ORION INTELLIGENCE — PROPRIETARY SOFTWARE NOTICE AND LICENSE TERMS
+Version 2.0 — 26 September 2026
+
+Copyright (c) 2026 Cybersage Technologies and its licensors.
+All rights reserved.
+
+PUBLICLY VISIBLE SOURCE CODE. NO GENERAL RIGHT TO USE OR REDISTRIBUTE.
+THIS IS PROPRIETARY SOFTWARE, NOT AN OPEN-SOURCE LICENSE.
+
+1. OWNER AND COVERED MATERIALS
+
+Cybersage Technologies (the "Rights Holder") reserves all rights it owns or
+is authorized to license in the Orion Intelligence software in this
+repository, including source code, object code, binaries, scripts, original
+documentation, designs, and other original assets (the "Software"). These
+terms cover those materials in whole or in part and in any medium. They do
+not claim ownership of third-party materials or rights the Rights Holder
+does not control. Section 6 governs third-party and previously granted rights.
+
+2. ONE MODULE OF A LARGER PLATFORM
+
+This repository publicly exposes one module of the Orion platform. It is
+not a distribution of the complete platform. Full platform operation requires
+all other necessary Orion modules, supporting services, data sources,
+configuration, credentials, and applicable authorizations, supplied or
+obtained separately. Availability of this repository does not provide access
+to, or a license for, those components. Some features may remain unavailable
+without them. No standalone or complete-platform functionality is promised.
+
+3. NO GENERAL LICENSE GRANT
+
+Except for the limited rights described in Section 5, rights preserved by
+Section 6, or a separate written agreement signed by an authorized
+representative of the Rights Holder, no permission is granted to use,
+install, execute, deploy, host, copy, modify, adapt, or redistribute the
+Software for any purpose.
+
+This restriction applies to private, personal, internal-business, commercial,
+noncommercial, educational, academic, research, evaluation, testing,
+charitable, and governmental purposes, whether or not money is charged.
+Public visibility, possession of a copy, attribution, a license key, payment,
+installation instructions, examples, or technical access do not by themselves
+grant a license. Technical ability to run the Software is not authorization.
+
+4. RESTRICTED ACTS
+
+Subject to Sections 5 and 6, without the separate written authorization
+specified in Section 3, you may not:
+
+(a) install, build, compile, execute, deploy, self-host, or otherwise use the
+    Software, including in a private environment or for internal operations;
+(b) copy, modify, translate, adapt, merge, port, extract, or create derivative
+    works of the Software, or incorporate any protected portion into another
+    project, product, dataset, or service;
+(c) distribute, redistribute, publish, upload, mirror, share, transfer, sell,
+    resell, sublicense, rent, lease, lend, or otherwise supply the Software
+    or copies or derivatives to any person, whether free of charge or for
+    payment, in source, binary, container, package, archive, or other form;
+(d) offer the Software or its functionality as a hosted service, SaaS,
+    managed service, service bureau, customer deployment, or white-label
+    offering, or otherwise commercially exploit it;
+(e) bypass license checks, authentication, access controls, or entitlement
+    restrictions, or use unauthorized credentials or license keys;
+(f) remove, alter, conceal, or misrepresent copyright, license, attribution,
+    ownership, or trademark notices, or claim the Software as your own; or
+(g) authorize, assist, or enable another person to perform an act restricted
+    by these terms where doing so infringes rights reserved here.
+
+These restrictions apply regardless of whether the activity is private or
+public, online or offline, commercial or noncommercial, or involves the
+whole Software or a protected portion of it.
+
+5. PUBLIC GITHUB HOSTING AND NON-WAIVABLE RIGHTS
+
+The Rights Holder acknowledges the permissions arising from publishing a
+public repository under the applicable GitHub Terms of Service, including
+GitHub's rights to operate its service and users' rights to view and fork
+public content, and to use, display, perform, and reproduce that content
+through GitHub's service as permitted by those terms and its functionality.
+Nothing in this notice withdraws or narrows those permissions.
+
+Those platform permissions do not, by themselves, authorize independent
+execution, deployment, off-platform redistribution, or commercial use of
+the Software. No additional permission is granted by this notice.
+
+Nothing in these terms restricts an activity to the extent it is permitted
+by applicable law and cannot lawfully be restricted, including applicable
+copyright exceptions. These terms apply only to the extent enforceable.
+
+6. THIRD-PARTY MATERIALS AND EXISTING RIGHTS
+
+Third-party software, dependencies, components, data, and assets remain
+subject to their own licenses and notices. These terms do not relicense
+those materials or remove permissions granted by their owners. Required
+third-party notices and license obligations must be preserved.
+
+These terms apply to revisions first made available under this notice.
+They do not retroactively revoke rights validly granted for earlier copies
+under another license, or supersede an existing signed agreement except as
+that agreement permits. A separately signed agreement governs only the
+materials, activities, users, duration, and other scope it expressly covers.
+Receiving an earlier version does not grant rights to later proprietary
+revisions beyond the scope of the earlier grant.
+
+7. OWNERSHIP AND SEPARATE AUTHORIZATION
+
+Ownership remains with the Rights Holder and the respective licensors.
+No patent, trademark, endorsement, sublicensing, or other intellectual-
+property license is granted by implication, estoppel, or otherwise. Public
+disclosure does not dedicate the Software to the public domain.
+
+Any permission beyond Sections 5 and 6 requires a separate written agreement
+signed by an authorized representative of the Rights Holder. Silence,
+acceptance of a bug report, or a general invitation to collaborate is not
+such an agreement. Contributions require prior written arrangements covering
+the permitted work and the rights in the contribution; no automatic copyright
+assignment is asserted by these terms.
+
+8. NO WARRANTY OR SUPPORT COMMITMENT
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SOFTWARE IS PROVIDED
+"AS IS" AND "AS AVAILABLE", WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+NONINFRINGEMENT, ACCURACY, SECURITY, AVAILABILITY, OR COMPLETENESS.
+NO SUPPORT, MAINTENANCE, UPDATES, HOSTING, DATA, CREDENTIALS, OR ACCESS TO
+OTHER MODULES IS PROMISED EXCEPT UNDER A SEPARATE SIGNED AGREEMENT.
+
+9. LIMITATION OF LIABILITY
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE RIGHTS HOLDER AND
+ITS LICENSORS SHALL NOT BE LIABLE FOR DAMAGES OR OTHER LIABILITY ARISING
+FROM THE SOFTWARE OR ITS AVAILABILITY, INCLUDING LOSS OF DATA, PROFITS,
+REVENUE, BUSINESS, OR OPPORTUNITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE.
+THIS EXCLUSION DOES NOT APPLY WHERE LIABILITY CANNOT LAWFULLY BE EXCLUDED.
+A SEPARATE SIGNED AGREEMENT MAY PROVIDE DIFFERENT LIABILITY TERMS.
+
+10. ENFORCEMENT AND RESERVATION
+
+Unauthorized acts may infringe the Rights Holder's or its licensors' rights.
+They reserve the right to seek remedies available under applicable law.
+Failure to enforce a right on one occasion does not waive that right.
+If a provision is unenforceable, the remaining provisions continue to apply
+to the extent permitted by law. No remedy, penalty, or legal outcome is
+guaranteed by this notice.
+
+ALL RIGHTS NOT EXPRESSLY GRANTED OR OTHERWISE PRESERVED ABOVE ARE RESERVED.
