@@ -17,8 +17,6 @@
 </p>
 
 <p align="left" aria-label="Orion project resources">
-  <a href="https://www.linkedin.com/showcase/orion-by-genesis-technologies/" title="Connect with the Orion team on LinkedIn"><img src="../docs/_static/readme-linkedin.svg" alt="Connect with the Orion team on LinkedIn" width="232" height="38"></a>
-  &nbsp;
   <a href="https://orion-search.readthedocs.io" title="Read the Orion documentation"><img src="../docs/_static/readme-documentation.svg" alt="Read the Orion documentation" width="232" height="38"></a>
   &nbsp;
   <a href="https://uptime.orionintelligence.org/status/orion-intelligence" title="View Orion service health"><img src="../docs/_static/readme-status.svg" alt="View Orion live service health" width="232" height="38"></a>
