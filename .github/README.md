@@ -12,16 +12,22 @@
 
 # Orion Platform
 
+<p align="left" aria-label="Orion by Genesis Technologies">
+  <a href="https://www.linkedin.com/showcase/orion-by-genesis-technologies/" title="Meet the team behind Orion on LinkedIn"><img src="../docs/_static/readme-connect.svg" alt="Orion by Genesis Technologies: meet the team behind Orion and connect with the developers on LinkedIn" width="820"></a>
+</p>
+
 <p align="left" aria-label="Orion project resources">
-  <a href="https://orion-search.readthedocs.io" title="Read the Orion documentation"><img src="docs/_static/readme-documentation.svg" alt="Read the Orion documentation" width="232" height="38"></a>
+  <a href="https://www.linkedin.com/showcase/orion-by-genesis-technologies/" title="Connect with the Orion team on LinkedIn"><img src="../docs/_static/readme-linkedin.svg" alt="Connect with the Orion team on LinkedIn" width="232" height="38"></a>
   &nbsp;
-  <a href="https://uptime.orionintelligence.org/status/orion-intelligence" title="View Orion service health"><img src="docs/_static/readme-status.svg" alt="View Orion live service health" width="232" height="38"></a>
+  <a href="https://orion-search.readthedocs.io" title="Read the Orion documentation"><img src="../docs/_static/readme-documentation.svg" alt="Read the Orion documentation" width="232" height="38"></a>
+  &nbsp;
+  <a href="https://uptime.orionintelligence.org/status/orion-intelligence" title="View Orion service health"><img src="../docs/_static/readme-status.svg" alt="View Orion live service health" width="232" height="38"></a>
 </p>
 
 Orion Platform is a comprehensive, web-based solution that combines the functionality of a browser, search engine, crawler, and data aggregation tools to empower OSINT (Open Source Intelligence) experts. Built on top of Docker, Orion provides a user-friendly interface to explore, search, and visualize data extracted by its powerful Orion Crawler.
 
 <p align="center">
-  <img src="docs/_static/readme-homepage.png" alt="CYBERATTACK HITS FRENCH INTERIOR(3)" width="1200">
+  <img src="../docs/_static/readme-homepage.png" alt="CYBERATTACK HITS FRENCH INTERIOR(3)" width="1200">
 </p>
 
 The platform integrates seamlessly with machine learning models, enhancing search relevance and enabling advanced
@@ -86,7 +92,7 @@ For later starts or shutdowns:
 ```
 
 For additional build modes, testing workflows, production deployment, and configuration details, see the
-[developer documentation](docs/app_docs/developer_documentation.md) or the complete
+[developer documentation](../docs/app_docs/developer_documentation.md) or the complete
 [Orion documentation](https://orion-search.readthedocs.io).
 
 </details>
@@ -97,8 +103,8 @@ Consolidated search runs a single IOC query across every index, splitting matche
 threat records with timing, result, and asset counts, while the domain index surfaces every unique domain found.
 
 <p align="center">
-  <a href="docs/_static/readme-consolidated-20260925.png">
-    <img src="docs/_static/readme-consolidated-20260925.png" alt="Orion consolidated IOC results" width="1200">
+  <a href="../docs/_static/readme-consolidated-20260925.png">
+    <img src="../docs/_static/readme-consolidated-20260925.png" alt="Orion consolidated IOC results" width="1200">
   </a>
   <br>
   <sub><strong>Consolidated Results</strong> · IOC search across stealers and threats with domain insights</sub>
@@ -109,77 +115,77 @@ threat records with timing, result, and asset counts, while the domain index sur
   <br>
   <table width="100%">
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/account-settings-20260326.png"><img src="docs/screenshots/account-settings-20260326.png" alt="Account Settings" width="100%"></a><br><sub>Account Settings</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/apk-scan-report-20260326.png"><img src="docs/screenshots/apk-scan-report-20260326.png" alt="APK Scan Report" width="100%"></a><br><sub>APK Scan Report</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/audit-logs-20260326.png"><img src="docs/screenshots/audit-logs-20260326.png" alt="Audit Logs" width="100%"></a><br><sub>Audit Logs</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/account-settings-20260326.png"><img src="../docs/screenshots/account-settings-20260326.png" alt="Account Settings" width="100%"></a><br><sub>Account Settings</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/apk-scan-report-20260326.png"><img src="../docs/screenshots/apk-scan-report-20260326.png" alt="APK Scan Report" width="100%"></a><br><sub>APK Scan Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/audit-logs-20260326.png"><img src="../docs/screenshots/audit-logs-20260326.png" alt="Audit Logs" width="100%"></a><br><sub>Audit Logs</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/consolidated-insights-20260326.png"><img src="docs/screenshots/consolidated-insights-20260326.png" alt="Consolidated Insights" width="100%"></a><br><sub>Consolidated Insights</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/consolidated-results-20260326.png"><img src="docs/screenshots/consolidated-results-20260326.png" alt="Consolidated Results" width="100%"></a><br><sub>Consolidated Results</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/cti-context-menu-20260326.png"><img src="docs/screenshots/cti-context-menu-20260326.png" alt="CTI Context Menu" width="100%"></a><br><sub>CTI Context Menu</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/consolidated-insights-20260326.png"><img src="../docs/screenshots/consolidated-insights-20260326.png" alt="Consolidated Insights" width="100%"></a><br><sub>Consolidated Insights</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/consolidated-results-20260326.png"><img src="../docs/screenshots/consolidated-results-20260326.png" alt="Consolidated Results" width="100%"></a><br><sub>Consolidated Results</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/cti-context-menu-20260326.png"><img src="../docs/screenshots/cti-context-menu-20260326.png" alt="CTI Context Menu" width="100%"></a><br><sub>CTI Context Menu</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/cti-export-modal-20260326.png"><img src="docs/screenshots/cti-export-modal-20260326.png" alt="CTI Export Modal" width="100%"></a><br><sub>CTI Export Modal</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/cti-graph-20260326.png"><img src="docs/screenshots/cti-graph-20260326.png" alt="CTI Graph" width="100%"></a><br><sub>CTI Graph</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/data-breach-tracking-20260326.png"><img src="docs/screenshots/data-breach-tracking-20260326.png" alt="Data Breach Tracking" width="100%"></a><br><sub>Data Breach Tracking</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/cti-export-modal-20260326.png"><img src="../docs/screenshots/cti-export-modal-20260326.png" alt="CTI Export Modal" width="100%"></a><br><sub>CTI Export Modal</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/cti-graph-20260326.png"><img src="../docs/screenshots/cti-graph-20260326.png" alt="CTI Graph" width="100%"></a><br><sub>CTI Graph</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/data-breach-tracking-20260326.png"><img src="../docs/screenshots/data-breach-tracking-20260326.png" alt="Data Breach Tracking" width="100%"></a><br><sub>Data Breach Tracking</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/defacement-report-20260326.png"><img src="docs/screenshots/defacement-report-20260326.png" alt="Defacement Report" width="100%"></a><br><sub>Defacement Report</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/directory-monitoring-20260326.png"><img src="docs/screenshots/directory-monitoring-20260326.png" alt="Directory Monitoring" width="100%"></a><br><sub>Directory Monitoring</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/entity-api-email-breach-20260326.png"><img src="docs/screenshots/entity-api-email-breach-20260326.png" alt="Entity API Email Breach" width="100%"></a><br><sub>Entity API Email Breach</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/defacement-report-20260326.png"><img src="../docs/screenshots/defacement-report-20260326.png" alt="Defacement Report" width="100%"></a><br><sub>Defacement Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/directory-monitoring-20260326.png"><img src="../docs/screenshots/directory-monitoring-20260326.png" alt="Directory Monitoring" width="100%"></a><br><sub>Directory Monitoring</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/entity-api-email-breach-20260326.png"><img src="../docs/screenshots/entity-api-email-breach-20260326.png" alt="Entity API Email Breach" width="100%"></a><br><sub>Entity API Email Breach</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/exploit-results-20260326.png"><img src="docs/screenshots/exploit-results-20260326.png" alt="Exploit Results" width="100%"></a><br><sub>Exploit Results</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/feed-report-20260326.png"><img src="docs/screenshots/feed-report-20260326.png" alt="Feed Report" width="100%"></a><br><sub>Feed Report</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/file-scanner-report-20260326.png"><img src="docs/screenshots/file-scanner-report-20260326.png" alt="File Scanner Report" width="100%"></a><br><sub>File Scanner Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/exploit-results-20260326.png"><img src="../docs/screenshots/exploit-results-20260326.png" alt="Exploit Results" width="100%"></a><br><sub>Exploit Results</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/feed-report-20260326.png"><img src="../docs/screenshots/feed-report-20260326.png" alt="Feed Report" width="100%"></a><br><sub>Feed Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/file-scanner-report-20260326.png"><img src="../docs/screenshots/file-scanner-report-20260326.png" alt="File Scanner Report" width="100%"></a><br><sub>File Scanner Report</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/general-intelligence-results-20260326.png"><img src="docs/screenshots/general-intelligence-results-20260326.png" alt="General Intelligence Results" width="100%"></a><br><sub>General Intelligence Results</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/heatmap-report-20260326.png"><img src="docs/screenshots/heatmap-report-20260326.png" alt="Heatmap Report" width="100%"></a><br><sub>Heatmap Report</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/homepage-overview-20260326.png"><img src="docs/screenshots/homepage-overview-20260326.png" alt="Homepage Overview" width="100%"></a><br><sub>Homepage Overview</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/general-intelligence-results-20260326.png"><img src="../docs/screenshots/general-intelligence-results-20260326.png" alt="General Intelligence Results" width="100%"></a><br><sub>General Intelligence Results</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/heatmap-report-20260326.png"><img src="../docs/screenshots/heatmap-report-20260326.png" alt="Heatmap Report" width="100%"></a><br><sub>Heatmap Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/homepage-overview-20260326.png"><img src="../docs/screenshots/homepage-overview-20260326.png" alt="Homepage Overview" width="100%"></a><br><sub>Homepage Overview</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/homepage-searchbar-20260326.png"><img src="docs/screenshots/homepage-searchbar-20260326.png" alt="Homepage Searchbar" width="100%"></a><br><sub>Homepage Searchbar</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/login-page-20260326.png"><img src="docs/screenshots/login-page-20260326.png" alt="Login Page" width="100%"></a><br><sub>Login Page</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/network-intel-geo-modal-20260326.png"><img src="docs/screenshots/network-intel-geo-modal-20260326.png" alt="Network Intel Geo Modal" width="100%"></a><br><sub>Network Intel Geo Modal</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/homepage-searchbar-20260326.png"><img src="../docs/screenshots/homepage-searchbar-20260326.png" alt="Homepage Searchbar" width="100%"></a><br><sub>Homepage Searchbar</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/login-page-20260326.png"><img src="../docs/screenshots/login-page-20260326.png" alt="Login Page" width="100%"></a><br><sub>Login Page</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/network-intel-geo-modal-20260326.png"><img src="../docs/screenshots/network-intel-geo-modal-20260326.png" alt="Network Intel Geo Modal" width="100%"></a><br><sub>Network Intel Geo Modal</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/network-intel-host-recon-20260326.png"><img src="docs/screenshots/network-intel-host-recon-20260326.png" alt="Network Intel Host Recon" width="100%"></a><br><sub>Network Intel Host Recon</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/network-intel-ip-scan-20260326.png"><img src="docs/screenshots/network-intel-ip-scan-20260326.png" alt="Network Intel IP Scan" width="100%"></a><br><sub>Network Intel IP Scan</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/network-intel-vulnerability-scan-20260326.png"><img src="docs/screenshots/network-intel-vulnerability-scan-20260326.png" alt="Network Intel Vulnerability Scan" width="100%"></a><br><sub>Network Intel Vulnerability Scan</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/network-intel-host-recon-20260326.png"><img src="../docs/screenshots/network-intel-host-recon-20260326.png" alt="Network Intel Host Recon" width="100%"></a><br><sub>Network Intel Host Recon</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/network-intel-ip-scan-20260326.png"><img src="../docs/screenshots/network-intel-ip-scan-20260326.png" alt="Network Intel IP Scan" width="100%"></a><br><sub>Network Intel IP Scan</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/network-intel-vulnerability-scan-20260326.png"><img src="../docs/screenshots/network-intel-vulnerability-scan-20260326.png" alt="Network Intel Vulnerability Scan" width="100%"></a><br><sub>Network Intel Vulnerability Scan</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/password-reset-20260326.png"><img src="docs/screenshots/password-reset-20260326.png" alt="Password Reset" width="100%"></a><br><sub>Password Reset</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/report-chatbot-20260326.png"><img src="docs/screenshots/report-chatbot-20260326.png" alt="Report Chatbot" width="100%"></a><br><sub>Report Chatbot</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/report-json-viewer-20260326.png"><img src="docs/screenshots/report-json-viewer-20260326.png" alt="Report JSON Viewer" width="100%"></a><br><sub>Report JSON Viewer</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/password-reset-20260326.png"><img src="../docs/screenshots/password-reset-20260326.png" alt="Password Reset" width="100%"></a><br><sub>Password Reset</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/report-chatbot-20260326.png"><img src="../docs/screenshots/report-chatbot-20260326.png" alt="Report Chatbot" width="100%"></a><br><sub>Report Chatbot</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/report-json-viewer-20260326.png"><img src="../docs/screenshots/report-json-viewer-20260326.png" alt="Report JSON Viewer" width="100%"></a><br><sub>Report JSON Viewer</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/search-filters-20260326.png"><img src="docs/screenshots/search-filters-20260326.png" alt="Search Filters" width="100%"></a><br><sub>Search Filters</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-intel-list-view-20260326.png"><img src="docs/screenshots/social-intel-list-view-20260326.png" alt="Social Intel List View" width="100%"></a><br><sub>Social Intel List View</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-intel-20260326.png"><img src="docs/screenshots/social-intel-20260326.png" alt="Social Intel" width="100%"></a><br><sub>Social Intel</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/search-filters-20260326.png"><img src="../docs/screenshots/search-filters-20260326.png" alt="Search Filters" width="100%"></a><br><sub>Search Filters</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-intel-list-view-20260326.png"><img src="../docs/screenshots/social-intel-list-view-20260326.png" alt="Social Intel List View" width="100%"></a><br><sub>Social Intel List View</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-intel-20260326.png"><img src="../docs/screenshots/social-intel-20260326.png" alt="Social Intel" width="100%"></a><br><sub>Social Intel</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-manage-profiles-20260326.png"><img src="docs/screenshots/social-manage-profiles-20260326.png" alt="Social Manage Profiles" width="100%"></a><br><sub>Social Manage Profiles</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-metadata-results-20260326.png"><img src="docs/screenshots/social-metadata-results-20260326.png" alt="Social Metadata Results" width="100%"></a><br><sub>Social Metadata Results</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-report-20260326.png"><img src="docs/screenshots/social-report-20260326.png" alt="Social Report" width="100%"></a><br><sub>Social Report</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-manage-profiles-20260326.png"><img src="../docs/screenshots/social-manage-profiles-20260326.png" alt="Social Manage Profiles" width="100%"></a><br><sub>Social Manage Profiles</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-metadata-results-20260326.png"><img src="../docs/screenshots/social-metadata-results-20260326.png" alt="Social Metadata Results" width="100%"></a><br><sub>Social Metadata Results</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-report-20260326.png"><img src="../docs/screenshots/social-report-20260326.png" alt="Social Report" width="100%"></a><br><sub>Social Report</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/social-summary-popup-20260326.png"><img src="docs/screenshots/social-summary-popup-20260326.png" alt="Social Summary Popup" width="100%"></a><br><sub>Social Summary Popup</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/stealer-logs-results-20260326.png"><img src="docs/screenshots/stealer-logs-results-20260326.png" alt="Stealer Logs Results" width="100%"></a><br><sub>Stealer Logs Results</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/support-modal-20260326.png"><img src="docs/screenshots/support-modal-20260326.png" alt="Support Modal" width="100%"></a><br><sub>Support Modal</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/social-summary-popup-20260326.png"><img src="../docs/screenshots/social-summary-popup-20260326.png" alt="Social Summary Popup" width="100%"></a><br><sub>Social Summary Popup</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/stealer-logs-results-20260326.png"><img src="../docs/screenshots/stealer-logs-results-20260326.png" alt="Stealer Logs Results" width="100%"></a><br><sub>Stealer Logs Results</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/support-modal-20260326.png"><img src="../docs/screenshots/support-modal-20260326.png" alt="Support Modal" width="100%"></a><br><sub>Support Modal</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/system-settings-20260326.png"><img src="docs/screenshots/system-settings-20260326.png" alt="System Settings" width="100%"></a><br><sub>System Settings</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/tenant-administration-20260326.png"><img src="docs/screenshots/tenant-administration-20260326.png" alt="Tenant Administration" width="100%"></a><br><sub>Tenant Administration</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/tenant-homepage-20260326.png"><img src="docs/screenshots/tenant-homepage-20260326.png" alt="Tenant Homepage" width="100%"></a><br><sub>Tenant Homepage</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/system-settings-20260326.png"><img src="../docs/screenshots/system-settings-20260326.png" alt="System Settings" width="100%"></a><br><sub>System Settings</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/tenant-administration-20260326.png"><img src="../docs/screenshots/tenant-administration-20260326.png" alt="Tenant Administration" width="100%"></a><br><sub>Tenant Administration</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/tenant-homepage-20260326.png"><img src="../docs/screenshots/tenant-homepage-20260326.png" alt="Tenant Homepage" width="100%"></a><br><sub>Tenant Homepage</sub></td>
     </tr>
     <tr>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/tenant-manage-iocs-20260326.png"><img src="docs/screenshots/tenant-manage-iocs-20260326.png" alt="Tenant Manage IOCs" width="100%"></a><br><sub>Tenant Manage IOCs</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/tenant-settings-20260326.png"><img src="docs/screenshots/tenant-settings-20260326.png" alt="Tenant Settings" width="100%"></a><br><sub>Tenant Settings</sub></td>
-      <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/tenant-users-20260326.png"><img src="docs/screenshots/tenant-users-20260326.png" alt="Tenant Users" width="100%"></a><br><sub>Tenant Users</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/tenant-manage-iocs-20260326.png"><img src="../docs/screenshots/tenant-manage-iocs-20260326.png" alt="Tenant Manage IOCs" width="100%"></a><br><sub>Tenant Manage IOCs</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/tenant-settings-20260326.png"><img src="../docs/screenshots/tenant-settings-20260326.png" alt="Tenant Settings" width="100%"></a><br><sub>Tenant Settings</sub></td>
+      <td width="33.33%" align="center" valign="top"><a href="../docs/screenshots/tenant-users-20260326.png"><img src="../docs/screenshots/tenant-users-20260326.png" alt="Tenant Users" width="100%"></a><br><sub>Tenant Users</sub></td>
     </tr>
     <tr>
-      <td colspan="3" align="center" valign="top"><a href="docs/screenshots/web-scan-report-20260326.png"><img src="docs/screenshots/web-scan-report-20260326.png" alt="Web Scan Report" width="33.33%"></a><br><sub>Web Scan Report</sub></td>
+      <td colspan="3" align="center" valign="top"><a href="../docs/screenshots/web-scan-report-20260326.png"><img src="../docs/screenshots/web-scan-report-20260326.png" alt="Web Scan Report" width="33.33%"></a><br><sub>Web Scan Report</sub></td>
     </tr>
   </table>
 </details>
@@ -252,7 +258,7 @@ acquisition, and specialized social-data workflows.
 Orion follows a clear path from source collection to analyst action:
 
 <p align="center">
-  <img src="docs/_static/readme-architecture-flow.svg" alt="Orion architecture flow: collect, enrich, index, serve, investigate, and feed new intelligence priorities back into collection" width="1200">
+  <img src="../docs/_static/readme-architecture-flow.svg" alt="Orion architecture flow: collect, enrich, index, serve, investigate, and feed new intelligence priorities back into collection" width="1200">
 </p>
 
 ## Modules
@@ -382,7 +388,7 @@ public issue for a security vulnerability.
 Explore collaboration opportunities and platform documentation.
 
 <p>
-  <a href="https://www.orionintelligence.org/collaboration"><img src="docs/_static/readme-collaboration.svg" alt="Explore Orion collaboration" width="232" height="38"></a>
+  <a href="https://www.orionintelligence.org/collaboration"><img src="../docs/_static/readme-collaboration.svg" alt="Explore Orion collaboration" width="232" height="38"></a>
   &nbsp;
-  <a href="https://orion-search.readthedocs.io/en/latest/app_docs/introduction_to_platform.html"><img src="docs/_static/readme-documentation.svg" alt="Read the Orion documentation" width="232" height="38"></a>
+  <a href="https://orion-search.readthedocs.io/en/latest/app_docs/introduction_to_platform.html"><img src="../docs/_static/readme-documentation.svg" alt="Read the Orion documentation" width="232" height="38"></a>
 </p>
