@@ -108,10 +108,8 @@ threat records with timing, result, and asset counts, while the domain index sur
   <sub><strong>Consolidated Results</strong> · IOC search across stealers and threats with domain insights</sub>
 </p>
 
-<details>
-  <summary><strong>Screenshot Gallery</strong> · Browse 43 platform screens</summary>
-  <br>
-  <table width="100%">
+<p><strong>Screenshot Gallery</strong> · 43 platform screens</p>
+<table width="100%">
     <tr>
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/account-settings-20260326.png"><img src="docs/screenshots/account-settings-20260326.png" alt="Account Settings" width="100%"></a><br><sub>Account Settings</sub></td>
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/apk-scan-report-20260326.png"><img src="docs/screenshots/apk-scan-report-20260326.png" alt="APK Scan Report" width="100%"></a><br><sub>APK Scan Report</sub></td>
@@ -132,6 +130,12 @@ threat records with timing, result, and asset counts, while the domain index sur
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/directory-monitoring-20260326.png"><img src="docs/screenshots/directory-monitoring-20260326.png" alt="Directory Monitoring" width="100%"></a><br><sub>Directory Monitoring</sub></td>
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/entity-api-email-breach-20260326.png"><img src="docs/screenshots/entity-api-email-breach-20260326.png" alt="Entity API Email Breach" width="100%"></a><br><sub>Entity API Email Breach</sub></td>
     </tr>
+</table>
+
+<details>
+  <summary><strong>Show all 43 screens</strong> · 31 more</summary>
+  <br>
+  <table width="100%">
     <tr>
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/exploit-results-20260326.png"><img src="docs/screenshots/exploit-results-20260326.png" alt="Exploit Results" width="100%"></a><br><sub>Exploit Results</sub></td>
       <td width="33.33%" align="center" valign="top"><a href="docs/screenshots/feed-report-20260326.png"><img src="docs/screenshots/feed-report-20260326.png" alt="Feed Report" width="100%"></a><br><sub>Feed Report</sub></td>
