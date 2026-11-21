@@ -9,6 +9,8 @@
 [![PageSpeed Insights](https://img.shields.io/badge/PageSpeed%20Insights-100%25-brightgreen)](https://pagespeed.web.dev/analysis/https-orion-genesistechnologies-org/hfe5h3u485?form_factor=desktop)
 [![Lighthouse Performance](https://img.shields.io/badge/Lighthouse%20Performance-Run%20Artifacts-blue)](https://github.com/Orion-Intelligence/Orion-Intelligence/actions/workflows/build.yml)
 [![Coverage](https://github.com/Orion-Intelligence/Orion-Intelligence-Solution/raw/badges/coverage.svg)](https://github.com/Orion-Intelligence/Orion-Intelligence/actions/workflows/test.yml?query=branch%3Atrusted-main)
+[![Duplication](https://github.com/Orion-Intelligence/Orion-Intelligence-Solution/raw/badges/duplication.svg)](https://github.com/Orion-Intelligence/Orion-Intelligence/actions/workflows/quality.yml?query=branch%3Atrusted-main)
+[![Complexity](https://github.com/Orion-Intelligence/Orion-Intelligence-Solution/raw/badges/complexity.svg)](https://github.com/Orion-Intelligence/Orion-Intelligence/actions/workflows/quality.yml?query=branch%3Atrusted-main)
 
 # Orion Platform
 

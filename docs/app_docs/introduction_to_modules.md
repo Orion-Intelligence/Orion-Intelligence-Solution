@@ -55,7 +55,8 @@ The most important access patterns are:
 - CTI Graph and Social Intel have separate graph and social-mapper gates
 - Case Management requires case-management access and is more restricted for analyst users than for admins or maintainers
 - tenant alert visibility depends on alert type, tenant licenses, user licenses, and configured scanner categories
-- Takedown Requests is a root-tenant administrator review surface; defacement-module users can initiate takedown evidence requests from eligible compromise reports, but only root administrators can accept or reject those requests
+- Takedown Requests is a review surface for root-tenant administrators and primary-tenant maintainers; defacement-module users can initiate takedown evidence requests from eligible compromise reports, and requests from a primary tenant and its sub-tenants are decided by that primary tenant's maintainer
+- Marketplace follows the Data Breach module license, and Orion Vault is available to every signed-in user
 
 If a module is described here but not visible in the application, check license assignment, user role, tenant status, and deployment feature toggles before assuming the feature is unavailable.
 
@@ -145,6 +146,10 @@ Use this module when starting from:
 - a known breached identity
 - a leak URL or dump reference found in a breach report
 - a need to verify whether a person or account appears in breach datasets
+
+### Marketplace
+
+Marketplace lists structured listings collected from underground marketplaces, mostly on the onion network. Each record is one listing with details such as market name, vendor, category, price, currency, and status. It differs from the General Intelligence `Marketplaces` filter, which returns crawled marketplace pages rather than individual listings. Access follows the Data Breach module license. See [Marketplace](user_manual/orion_core.md#marketplace).
 
 ### Compromise Monitoring
 
@@ -386,13 +391,16 @@ Social Intelligence separates profile investigation from account monitoring:
 | Section | Main workflow |
 | --- | --- |
 | **Profile Intelligence** (`/dashboard/social-intel`) | Search a username or image, select candidate profiles, inspect saved and live details, and explore relationships in list or graph view. |
-| **Social Monitoring** (`/dashboard/manage-profiles`) | Capture platform sessions, define personas, connect accounts, monitor profiles, and review manual or scheduled activity. |
+| **Social Monitoring** (`/dashboard/manage-profiles`) | Capture platform sessions, create personas and monitors, run posting, ad, hate-speech, and keyword monitoring, and review manual or scheduled activity. |
+| **Identity Resolution** (`/dashboard/identity-resolution`) | Compare two profiles for impersonation and same-person ownership. |
 
 Profile Intelligence includes supported posts, videos, images, followers, following, commenter connections, online-presence matches, and exposure context. When a live extension fetch fails, saved recon results remain available if the scan already found them. Sign in to the source platform and reload when the profile shows **Login required**. Dashboard exposure matches span the identity's domains; platform Stealer Logs narrow matches to that platform where its host is known.
 
-Social Monitoring opens the **Manage Profiles** page with Sessions, Personas, Persona Monitoring, Profile Monitoring, and Results tabs. **Post** publishes using a connected account; **Ad** detects ads. Profile Monitoring reviews a real profile's posts for hate speech. Results distinguish manual and automated activity and provide stop controls, including **Stop daily run** for the remaining scheduled batch.
+Social Monitoring opens the **Manage Profiles** page with Sessions, Monitoring, and Results tabs. **Add a Monitor** creates personas and monitors for your persona's own account or for an external profile URL. **Post** publishes using a connected account, **Ad** detects ads, and **Scan** checks a profile's posts for hate speech or for target keywords. Monitors with the cron job enabled run in the daily schedule. Results distinguish manual and automated activity and provide stop controls, including **Stop daily run** for the remaining scheduled batch.
 
-These workflows complement indexed **Social** search, which searches already collected content. See [Profile Search](profile-search-profile-intelligence) and [Social Monitoring](user_manual.md#social-monitoring) for setup and operating steps.
+**Identity Resolution** (`/dashboard/identity-resolution`) compares a reference profile with a suspected impersonator on the same or a different platform, scores impersonation risk and same-person likelihood, and lists the evidence behind both scores.
+
+These workflows complement indexed **Social** search, which searches already collected content. See [Profile Search](profile-search-profile-intelligence) and [Social Monitoring](user_manual/orion_core.md#social-monitoring) for setup and operating steps.
 
 ## Shared Report Workflows
 
@@ -418,7 +426,7 @@ Onion Link opens the deployment’s onion endpoint when that capability is enabl
 
 ### Whistle Blowing
 
-Whistle Blowing opens the secure reporting path used for direct or anonymous submissions where that feature is enabled. It is adjacent to the investigation platform but distinct from the analyst workflow itself.
+Whistle Blowing opens Orion Leaks, the secure reporting portal used for direct or anonymous submissions where that feature is enabled. It is adjacent to the investigation platform but distinct from the analyst workflow itself. See [Orion Leaks](user_manual/orion_leaks.md).
 
 ### Documentation
 
@@ -438,6 +446,9 @@ Use AI Workspace for:
 - preserving shared chat links where enabled
 - moving between investigation context and assistant output
 - using quick prompts, markdown-rendered replies, message copy/edit actions, streaming stop, retry, and chat-history recovery
+- planning and running an authorized penetration-testing attack chain in the Kill Chain view, with AI hypotheses, the Deep Intel assistant, and a compiled report
+
+The AI features are documented in [DeepIntel](user_manual/deepintel.md).
 
 ### Public User Activity
 
@@ -498,6 +509,11 @@ Common concerns here include:
 - assigned licenses
 - two-factor settings
 - theme and preference choices
+- deleting one's own account, for users who are not administrators or maintainers
+
+### Orion Vault
+
+Orion Vault is a personal credential store in the profile area. Passwords are encrypted in the browser with a key protected by the user's vault password, a one-time recovery key allows recovery, and showing a stored password requires the login password. Website names, URLs, and usernames are stored without encryption. See [Orion Vault](user_manual/orion_core.md#orion-vault).
 
 ### Tenant Homepage
 
@@ -509,7 +525,7 @@ Tenant alert scanner settings control the tenant's allowed scanner categories fo
 
 ### Take Down
 
-Take Down is the root-administrator review workspace for abuse/takedown evidence requests created from compromised-site reports or from a manual target URL. The sidebar label maps to `Takedown Requests`, and the route is `/dashboard/profile/take-down`.
+Take Down is the review workspace for abuse/takedown evidence requests created from compromised-site reports or from a manual target URL. Root administrators and primary-tenant maintainers review it. The sidebar label maps to `Takedown Requests`, and the route is `/dashboard/profile/take-down`. The same takedown popup also reports impersonating social profiles, automatically for supported platforms and through official portals for the others, and replies from abuse contacts are handled on the `Takedown Mail` page.
 
 Use Take Down when:
 
@@ -518,7 +534,7 @@ Use Take Down when:
 - the team needs to search, filter, accept, or reject takedown requests
 - a manually supplied target URL needs the same abuse-contact capture and review flow
 
-The workspace lists target domain, target URL, captured abuse email, requester, status, and available action buttons. Root administrators can accept a pending request, which dispatches the takedown email using captured evidence, or reject it with a reason. Non-root users do not see this review page, even though eligible users can still create requests from report pages when their role and module license allow it.
+The workspace lists target domain, target URL, captured abuse email, requester, status, and available action buttons. Reviewers can accept a pending request, which emails the abuse contact through the tenant's Orion Mail account, reject it with a reason, or retry a failed evidence capture. Accepting requires an activated tenant mail account. Users who are not reviewers do not see this page, even though eligible users can still create requests from report pages when their role and module license allow it. See [Take Down](user_manual/orion_core.md#take-down).
 
 ### Manage IOCs
 
@@ -532,11 +548,11 @@ Backup & Restore provides system recovery for administrators and scoped organiza
 
 Tenant exports come from existing recovery points, so their backup date can precede the download date. Each tenant export includes **index.html**, a locally readable statistics summary, and **tenant.enc**, the encrypted import payload. The summary shows recovery/export dates, included tenants, and counts for users, database records, search records, and files. Import uses the original ZIP; it does not use the HTML report alone.
 
-See [Backup and Restore](user_manual.md#backup-and-restore) for creating backups, reading export statistics, permissions, maintenance behavior, and recovery steps.
+See [Backup and Restore](user_manual/orion_core.md#backup-and-restore) for creating backups, reading export statistics, permissions, maintenance behavior, and recovery steps.
 
 ### Tenant Settings
 
-Tenant Settings stores tenant-level information such as identity, contact, quota, and assigned licenses. It is the central administrative page for tenant configuration.
+Tenant Settings stores tenant-level information such as identity, contact, quota, and assigned licenses. It is the central administrative page for tenant configuration, including a verified custom domain, custom webmail on that domain, network (SMTP) configuration, Slack and Jira alert integrations, the alert schedule, and privacy and access toggles. See [Tenant Settings](user_manual/orion_core.md#tenant-settings).
 
 ### Users
 

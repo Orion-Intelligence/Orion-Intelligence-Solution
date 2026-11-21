@@ -3,7 +3,7 @@ from pathlib import Path
 
 project = "Orion Documentation"
 author = "Abdul Mannan"
-release = "1.0.3.8"
+release = "1.0.3.29"
 
 extensions = [
     "myst_parser",
@@ -18,6 +18,8 @@ exclude_patterns = [
     "api_docs/**",
     "public_index.md",
     "llm_rules.md",
+    "_pdf/**",
+    "scripts/**",
 ]
 
 if public_build:

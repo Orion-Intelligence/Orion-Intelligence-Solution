@@ -783,7 +783,7 @@ Create a system recovery point, retain or export the required copy, inspect its 
 
 ### Backup and Recovery Summary
 
-See the [user backup guide](user_manual.md#backup-and-restore) for creation, permissions, export statistics, import, maintenance, and troubleshooting. Keep application recovery instructions separate from deployment-specific hosting-provider disaster recovery.
+See the [user backup guide](user_manual/orion_core.md#backup-and-restore) for creation, permissions, export statistics, import, maintenance, and troubleshooting. Keep application recovery instructions separate from deployment-specific hosting-provider disaster recovery.
 
 :::{admonition} SOC 2 Readiness Note
 :class: note
@@ -1508,7 +1508,7 @@ The recovery approach may include:
 
 ### Backup-Based Recovery
 
-Use application-managed system backups for platform data recovery and tenant portions for authorized organization recovery. Infrastructure failures can also require a hosting-provider snapshot or a rebuilt deployment, depending on the operator's recovery arrangements. In every case, verify the recovery date, required encryption-key configuration, affected scope, and final recovery status. See [Backup and Restore](user_manual.md#backup-and-restore).
+Use application-managed system backups for platform data recovery and tenant portions for authorized organization recovery. Infrastructure failures can also require a hosting-provider snapshot or a rebuilt deployment, depending on the operator's recovery arrangements. In every case, verify the recovery date, required encryption-key configuration, affected scope, and final recovery status. See [Backup and Restore](user_manual/orion_core.md#backup-and-restore).
 
 ### Container-Based Recovery
 

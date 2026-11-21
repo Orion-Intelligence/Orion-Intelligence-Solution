@@ -411,7 +411,37 @@ Open Data Breach, choose All/Databases/Tracking, search the email or entity, app
 
 If the user specifically needs credential rows, use Stealer Logs or Consolidated IOCs. If no result appears, broaden filters or use Email Breach live lookup.
 
-## Defacement And Compromise Monitoring
+## Marketplace
+
+### Overview
+
+Structured listings collected from underground marketplaces: listing title and description, market name, vendor, category, price and currency, status, first and last seen dates, network, and supporting evidence. Separate from the General Intelligence `Marketplaces` filter, which returns crawled marketplace pages.
+
+**Search terms:** marketplace, dark web market, listings, vendor, price, onion market, marketplace listing.
+
+### Navigation
+
+Sidebar > `Marketplace` (`/dashboard/marketplace/all`), listed below Data Breach.
+
+### Quick answer
+
+Open `Marketplace`, search for a product, brand, or entity, narrow the results with the filters, and select `Open Report` to view a listing.
+
+### Steps
+
+  1. Open `Marketplace` from the sidebar.
+  2. Enter a keyword in the global search box.
+  3. Use `Network Type` and `Creation Date Range` to narrow the results.
+  4. Select `Open Report` to open a listing, or `Open CTI Graph` to pivot.
+
+### Troubleshooting
+
+- Entry missing or "No license for module: breach": Marketplace follows the Data Breach module license.
+- Few results: without a date range, Orion searches roughly the last 150 days.
+
+Full instructions are in [Marketplace](user_manual/orion_core.md#marketplace).
+
+## Compromise Monitoring
 
 ### Overview
 
@@ -421,15 +451,15 @@ Website compromise incidents, hacked pages, phishing sites, defacer names, attac
 
 ### Navigation
 
-sidebar > Compromise Monitoring / Defacement or `/dashboard/defacement/all`.
+sidebar > Compromise Monitoring or `/dashboard/defacement/all`.
 
 ### Quick answer
 
-Open Defacement, choose All/Hacked/Phishing/Databases, search the target or attacker, and open the incident report.
+Open Compromise Monitoring, choose All/Hacked/Phishing/Databases, search the target or attacker, and open the incident report.
 
 ### Steps
 
-  1. Open Defacement.
+  1. Open Compromise Monitoring.
   2. Choose All, Hacked, Phishing, or Databases.
   3. Enter target URL, domain, defacer, team, IP, or keyword.
   4. Apply Date Range if needed.
@@ -1136,9 +1166,9 @@ Buttons can be disabled during active fetches, after completed data loads, or on
 
 ### Overview
 
-Social Monitoring opens **Manage Profiles**, with **Sessions**, **Personas**, **Persona Monitoring**, **Profile Monitoring**, and **Results** tabs. It is separate from selecting discovered candidates in the profile-search popup.
+Social Monitoring opens **Manage Profiles**, with **Sessions**, **Monitoring**, and **Results** tabs. **Monitoring** holds personas and monitors, grouped as **Private Monitors** and **External Monitors**. It is separate from selecting discovered candidates in the profile-search popup.
 
-**Search terms:** Social Monitoring, Manage Profiles, capture session, verify session, expired session, persona, posting, ad monitoring, hate speech, stop daily run.
+**Search terms:** Social Monitoring, Manage Profiles, capture session, upload session, verify session, expired session, Add a Monitor, persona, external account, posting, ad monitoring, hate speech, keywords monitoring, cron job, stop daily run.
 
 ### Navigation
 
@@ -1147,23 +1177,56 @@ Social Intelligence > Social Monitoring (`/dashboard/manage-profiles`).
 ### Steps
 
 1. Install or update the browser extension if prompted, and sign in to the intended social platform account in the same browser.
-2. In **Sessions**, use **Fetch session**, then expand the platform and verify the captured session. Use **Edit** to recapture an expired session. The limit is 10 sessions per platform.
-3. For persona-based activity, add a persona, then use **Persona Monitoring > Add Account** to select its platform, session, persona, and **Posting** or **Ad Monitoring** purpose.
-4. Use the selected account's **Post** or **Ad** control and follow the activity in **Results**. **Post publishes externally**; it is not a profile-data fetch.
-5. For a real profile's content, use **Profile Monitoring > Add Monitoring Profile**, enter the platform and profile URL, attach a usable captured session, and start its monitoring action.
-6. In **Results**, filter by Account and Show, expand findings, and inspect the status and any error reason.
-7. **Stop** cancels a manual run. **Stop daily run** also stops the remaining scheduled batch; completed work is not undone.
+2. In **Sessions**, use **Fetch session** (or **Upload** a saved `.zip`/`.json` session file), then expand the platform and verify the session. Use **Edit** to recapture an expired session. The limit is 10 sessions per platform.
+3. In **Monitoring**, select **Add a Monitor**. Choose the **Account**: **Persona** (your persona's own account) or **External Account** (someone else's profile by URL).
+4. Choose the **Activity Type**: **Posting**, **Ad Monitoring**, **Hate Speech Monitoring**, or **Keywords Monitoring** (external accounts support only the last two). The drawer opens with **Ad Monitoring** selected.
+5. Select the platform and a session, enter a **Label**, and for external accounts the **Profile URL**. For keyword monitoring add at least one target keyword. Turn on **Automated Cron Job** to include the monitor in daily runs.
+6. For a **Persona** account, fill in the persona name, age group, gender, and up to three interests, then save. To create only a persona, choose **Posting** and save without a platform.
+7. Use the monitor's **Post**, **Ad**, or **Scan** control and follow the activity in **Results**. **Post publishes externally**; it is not a profile-data fetch.
+8. In **Results**, filter by Account and choose **Ads Monitoring**, **Posts**, **Hate Speech Monitoring**, or **Keywords Monitoring** under Show. Expand rows to inspect findings; keyword rows show matched keywords and can show the other posts.
+9. **Stop** cancels a manual run. **Stop daily run** also stops the remaining scheduled batch; completed work is not undone.
 
 ### Troubleshooting
 
-- Tabs unavailable: check that the extension is ready and its platforms loaded.
-- No available session: capture another session for the platform or review existing assignments.
-- Session Expired: sign in again, recapture/verify the session, and reconnect the profile.
-- No persona assigned: assign one for Post or Ad activity. A persona can have only one assigned account per platform.
+- Tabs unavailable: check that the extension is ready and its platforms loaded. Only platforms that support automation are listed; X appears as `x`.
+- No session in the drawer: capture or upload a session for that platform in **Sessions**. Sessions used by another monitor with the same activity are marked as already in use.
+- **No session attached** on a monitor: use **Attach session**; it needs a verified, unused session for the platform.
+- **No persona assigned**: posting monitors need a persona. A persona can be assigned to only one monitor.
+- Save rejected: the drawer names the first missing item, such as age group, label, profile URL, session, or keyword.
+- Own-account ad, hate-speech, and keyword monitors open read-only (eye icon); delete and recreate them to change settings.
+- Monitor skipped in the daily run: turn on **Automated Cron Job** and make sure a readable session (and, for posting, a persona) is attached.
+- Session Expired: sign in again, recapture/verify the session, and reattach it.
 - No post content available: review the persona's age group and interests. Only one successful manual post per profile is allowed per UTC day.
 - Daily scheduler running: wait before retrying a manual trigger, or use the explicitly labeled stop control if you intend to stop the daily batch.
 
-Deleting a session disconnects the profiles using it. Deleting a persona removes its assignments. Review those confirmations before proceeding. Full instructions are in [Social Monitoring](user_manual.md#social-monitoring).
+Deleting a session removes it from the monitors using it and marks them disconnected. Deleting a persona removes its assignment. Review those confirmations before proceeding. Full instructions are in [Social Monitoring](user_manual/orion_core.md#social-monitoring).
+
+## Identity Resolution And Impersonation Detection
+
+### Overview
+
+Compares a reference (authentic) profile with a candidate (suspected) profile, on the same or a different platform, and reports an impersonation-risk score, a same-person likelihood score, both profiles side by side, and the evidence behind the scores.
+
+**Search terms:** identity resolution, impersonation, fake account, copycat profile, compare profiles, same person, impersonation risk.
+
+### Navigation
+
+Social Intelligence > Identity Resolution (`/dashboard/identity-resolution`).
+
+### Steps
+
+1. Enter the reference profile URL and the candidate profile URL. Each field confirms the detected platform and handle.
+2. Use the swap control if the two were entered the wrong way round.
+3. Select **Compare Profiles**.
+4. Read the **Verdict**: each score is `Low` below 40, `Moderate` from 40, and `High` from 70.
+5. Compare the accounts in **Side-by-side Profiles** and review each signal in the **Structured Evidence Matrix**.
+
+### Troubleshooting
+
+- Compare button disabled: both URLs must be profile links on supported platforms, and they must be two different accounts.
+- Link rejected: use the profile URL, not a post, video, pin, subreddit, or search link.
+- Fewer signals than expected: profile pictures or fields that cannot be collected are skipped.
+- Scores are indicators from public metadata, not legal identity verification. Full instructions are in [Identity Resolution](user_manual/orion_core.md#identity-resolution).
 
 ## AI Workspace And Report Chat
 
@@ -1175,7 +1238,7 @@ Orion in-app chat, Profile AI, Nexus chat, report chat widgets, chat prompts, qu
 
 ### Navigation
 
-`/dashboard/profile/ai`, `/chat-share/:shareId`, report chat panel, chat widget.
+`/dashboard/ai` (Profile > AI), `/chat-share/:shareId`, report chat panel, chat widget.
 
 ### Quick answer
 
@@ -1195,6 +1258,43 @@ Open Profile > AI or the visible report chat widget, type the question, send it,
 ### Troubleshooting
 
 If AI is missing, check system setting, license, and deployment configuration. If a page reload leaves a user message without a Nexus answer, the workspace attempts recovery; retry only when the UI exposes retry context. Shared chat links show only the included transcript and do not grant dashboard access.
+
+Full instructions are in [AI Workspace](user_manual/deepintel.md#ai-workspace).
+
+## Kill Chain And Deep Intel
+
+### Overview
+
+Interactive attack-chain graph in the AI Workspace for authorized penetration testing of a single target: target scope, nodes and phases, prebuilt scenarios, AI hypotheses that must be accepted before they run, running and stopping the chain, node and hypothesis statuses, the Deep Intel assistant chat, the compiled report and exports, and `.kc` chain import and export.
+
+**Search terms:** kill chain, Deep Intel, attack chain, pentest chain, hypothesis, test it, run chain, scenario library, kill chain report, export chain.
+
+### Navigation
+
+Profile > AI > `Kill Chain view` (`/dashboard/ai?view=killchain`).
+
+### Quick answer
+
+Open the Kill Chain view, enter a single authorized domain, IP, URL, or CIDR as the target and press Enter, build the chain (add nodes, load a scenario, or ask Deep Intel), accept hypotheses with `Test it`, then press `Run chain`.
+
+### Steps
+
+  1. Open Profile > AI and select `Kill Chain view`.
+  2. Enter the target and press Enter.
+  3. Add nodes with `Add node`, load a prebuilt chain from `Scenario library`, or describe the objective in `Deep Intel`.
+  4. Review the `AI hypotheses` panel and use `Test it` or `Try` to stage the ones to test, or `Dismiss` the rest.
+  5. Press `Run chain`; use `Stop` to halt. Completed steps are not re-run.
+  6. Open the report node or the `Exports` layout to download the compiled report.
+
+### Troubleshooting
+
+- `Add node` and `Run chain` disabled: set a valid single target first.
+- Node shows `blocked — out of scope`: the step resolved to a host outside the target scope and was not run.
+- Need to repeat work: use `Re-run` on a node or `More > Re-arm all nodes`.
+- Reset and import are blocked while a chain is running.
+- Run the chain only against targets you are explicitly authorized to test.
+
+Full instructions are in [Kill Chain](user_manual/deepintel.md#kill-chain).
 
 ## Tenant Homepage, Alerts, And Notifications
 
@@ -1231,32 +1331,37 @@ Alerts depend on monitored IOCs, allowed scanner categories, and scan cycles. If
 
 ### Overview
 
-Compromise-report takedown initiation, defacement target URL review, public abuse-contact evidence capture, manual target URL submission, root-admin takedown queue, abuse email review, pending requests, accepted requests, denied requests, failed requests, rejection reasons, takedown email dispatch, duplicate target-domain prevention, and report status labels.
+Domain and web takedowns with abuse-contact evidence capture, social profile takedowns (automated submission for supported platforms, official portals for the rest), the takedown review queue for root administrators and primary-tenant maintainers, accept, reject with a reason, retry of failed captures, the tenant mail account requirement, and Takedown Mail conversations with abuse contacts.
 
-**Search terms:** take down, takedown, initiate takedown, report takedown, abuse email, takedown request, takedown in progress, takedown reported, reject takedown.
+**Search terms:** take down, takedown, initiate takedown, report takedown, social takedown, impersonation takedown, abuse email, takedown request, retry takedown, takedown mail, mailbox needs activation, reject takedown.
 
 ### Navigation
 
-Compromise Monitoring or Defacement report > Initiate Takedown; `/dashboard/profile/take-down` or Profile > Takedown Requests.
+Compromise Monitoring report > `Initiate Takedown`; Profile > Takedown Requests (`/dashboard/profile/take-down`); `Takedown Mail` (`/dashboard/profile/take-down-mail`).
 
 ### Quick answer
 
-To request takedown action, open an eligible defacement report and select Initiate Takedown, or have a root administrator open Profile > Takedown Requests and use Report Takedown with a target URL. Root administrators review the saved evidence, then accept to dispatch the abuse email or reject with a reason.
+Open an eligible report and select `Initiate Takedown`, then use the `Domain / Web` tab to capture evidence for a review request, or the `Social Takedown` tab to report an impersonating profile. Reviewers accept a pending request to email the abuse contact, reject it with a reason, or retry a failed capture. Replies appear on the `Takedown Mail` page.
 
 ### Steps
 
-  1. Open a Compromise Monitoring or Defacement report with a target URL.
-  2. Select Initiate Takedown.
-  3. Wait while Orion captures abuse-contact evidence.
-  4. Confirm the modal shows the captured abuse email and saved review entry.
-  5. Root administrator opens `/dashboard/profile/take-down`.
-  6. Search or filter by date range and status.
-  7. Select Accept to dispatch the takedown email, or Reject and enter a reason.
-  8. Reopen the source report to see Takedown in progress, Takedown reported, Takedown denied, or Takedown failed.
+  1. Open a Compromise Monitoring report with a target URL and select `Initiate Takedown`, or select `Report` on the Take Down page and enter a target URL.
+  2. On `Domain / Web`, add an optional custom email note and select `Report takedown`. Wait while Orion captures evidence and finds the abuse contact.
+  3. For an impersonating social profile, open `Social Takedown`, choose the platform, and either fill in the fields and select `Launch Automated Takedown` (automated platforms) or use `Open Report Form` and the shown abuse email (manual platforms).
+  4. Reviewers open Profile > Takedown Requests, search or filter by date and status, and use `View` to inspect the evidence.
+  5. Select `Accept` on a pending request to email the abuse contact, `Reject` to close it with a required reason, or `Retry` on a failed request to capture fresh evidence.
+  6. Open `Takedown Mail` to read replies from abuse contacts and select `Reply` to answer.
 
 ### Troubleshooting
 
-If the button is missing, check defacement-module access, role, and whether the report has a target URL and report ID. If no public abuse contact is found, no request is saved. The review page is visible only to root-tenant administrators; non-root users can create eligible requests but cannot approve or deny them.
+- `Accept` disabled or `Mailbox Needs Activation`: the tenant mail account must be activated before abuse emails can be sent. Reject and retry still work.
+- `Takedown request not created`: no abuse contact was found or capture failed. The request is still recorded as failed; a reviewer can retry or reject it.
+- "A takedown request already exists for this domain": only one domain request per domain per tenant is allowed.
+- "Please enter a valid profile URL.": the social profile URL must belong to the selected platform and point to a profile.
+- Reddit and YouTube social takedowns need a captured session for that platform.
+- Review access: root administrators see every request but can decide only root-owned ones; primary-tenant maintainers decide requests from their tenant and its sub-tenants.
+
+Full instructions are in [Take Down](user_manual/orion_core.md#take-down).
 
 ## Custom Alert Creation
 
@@ -1327,7 +1432,7 @@ New IOCs can require matching data and the next scan cycle before alerts appear.
 
 Signed-in user preferences, avatar upload, avatar delete, theme preference, 2FA, password changes, global recovery-key generation, profile visibility, user metadata, public profile access from comments, and personal account page updates.
 
-**Search terms:** account settings, avatar, profile image, theme, 2FA, change password, recovery key, profile visibility.
+**Search terms:** account settings, avatar, profile image, theme, 2FA, change password, recovery key, profile visibility, delete account.
 
 ### Navigation
 
@@ -1347,41 +1452,108 @@ Open Profile > Account to manage profile preferences and security. Orion asks fo
   6. To change password or 2FA, perform the action and enter the current password in `Confirm your identity`.
   7. To create a recovery key, select `Generate / replace recovery key`, confirm the current password, and save the displayed 43-character key immediately.
   8. Save or let other settings auto-apply depending on control.
+  9. To delete your own account, select `Delete Account` in the `Delete Account` card and confirm your login password. Deletion is immediate and permanent.
 
 ### Troubleshooting
 
 If confirmation fails, re-enter the current account password. If a recovery key was replaced, discard the old value because it is no longer valid. The recovery key is displayed only once. If public profile remains hidden, check both user profile visibility and tenant profile visibility setting.
 
+`Delete Account` is not shown to administrators or `maintainer` license holders. Deleting an account removes the login, Orion Mail data, and the account encryption key, then signs you out. See {ref}`Delete Your Account <delete-your-account>`.
+
+## Orion Vault
+
+### Overview
+
+Personal credential store with browser-side encryption: vault setup with a vault password, one-time recovery key, unlock and lock, saved credentials (website name, URL, username, password), showing a password after login-password confirmation, editing, deleting, changing the vault password, regenerating the recovery key, recovery with the recovery key, and deleting the vault.
+
+**Search terms:** Orion Vault, vault, password manager, credentials, security passphrase, recovery key, unlock vault, lock vault, forgot vault password, delete vault.
+
+### Navigation
+
+Profile > Orion Vault (`/dashboard/profile/orion-vault`).
+
+### Quick answer
+
+Open Profile > Orion Vault, create a vault password, save the recovery key shown once, then add credentials with `+ Add Credential`. Unlock with the vault password; showing a stored password asks for your login password.
+
+### Steps
+
+  1. Open Profile > Orion Vault.
+  2. First time: enter and confirm a `Security Passphrase` that meets the requirements, then select `Enable Data Protection`.
+  3. Copy the recovery key, tick `I have saved this code somewhere safe`, and select `I have saved it`.
+  4. Select `+ Add Credential`, fill in all four fields, and select `Save Credential`.
+  5. To see a password, select `Show` and confirm your application login password.
+  6. Use `Lock Vault` when finished. The vault also locks on reload, in a new tab, or on sign-out.
+
+### Troubleshooting
+
+- Forgot the vault password: select `Forgot Security Passphrase?` and use the recovery key to set a new one.
+- Lost the recovery key: unlock the vault and use `Regenerate Recovery Key`; the old key stops working.
+- Lost both: Orion cannot recover the stored passwords.
+- After five wrong vault passwords or recovery keys, unlocking is blocked for 15 minutes.
+- The `Confirm your identity` dialog wants your Orion login password, not the vault password. Wrong entries count toward the sign-in limit.
+- Website name, URL, and username are not encrypted; keep secrets in the password field only.
+
+Full instructions are in [Orion Vault](user_manual/orion_core.md#orion-vault).
+
+### Autofill and save logins on other websites
+
+**Search terms:** autofill, password autofill, Passwords toggle, generate password, save login, sign-up, create account, browser extension vault.
+
+The Orion browser extension can fill saved Vault logins on sign-in forms and, on sign-up forms, generate a strong password and save a new login. It is off by default.
+
+**Quick answer.** In the extension popup, turn on the `Passwords` toggle in the top-right. Be signed in to Orion in the same browser and unlock the Vault. An Orion icon then appears in login and sign-up fields: use it to fill a saved login, or on a sign-up form select `Generate password & save` to create one.
+
+**Steps — create a login on a sign-up form.**
+
+  1. Turn on the `Passwords` toggle in the extension popup, sign in to Orion in the same browser, and unlock the Vault.
+  2. On the sign-up form, select the Orion icon in the password field.
+  3. In the `Create a login` panel, enter the username or email, then select `Generate password & save`.
+  4. Orion saves the new login to your Vault and fills the username and password fields.
+
+**Troubleshooting.**
+
+  - No icon anywhere: the `Passwords` toggle is off, or the page was open before the extension updated. Turn it on and reload the page.
+  - `Create a login` shows a sign-in or unlock prompt: sign in to Orion in the same browser and unlock the Vault, then open the panel again.
+  - `Could not save the login (…)`: the save was refused or failed, and the code names the cause. Make sure Orion Intelligence is up to date, then retry.
+
+Full instructions are in {ref}`Password Autofill on Other Websites <password-autofill-on-other-websites>` and {ref}`Create a New Login on a Sign-Up Form <create-a-new-login-on-a-sign-up-form>`.
+
 ## Tenant Settings
 
 ### Overview
 
-Current-tenant profile configuration, tenant logo, tenant image, tenant overview, assigned licenses, quota, phone, country, city, state, tenant profile visibility, tenant alert webhook connections, Event Management toggle, editable tenant fields, read-only tenant fields, and maintainer/member tenant settings.
+Current-tenant profile and configuration: tenant image, overview, licenses and quota, contact data, custom domain with DNS records and verification, custom webmail domain with mail DNS records, network (SMTP) configuration with verification, Slack and Jira alert integrations, the alert schedule, and privacy and access toggles for user profile visibility, Event Management, admin alert visibility, and parent-tenant alert visibility.
 
-**Search terms:** tenant settings, tenant logo, tenant data, user profile visibility, event management toggle, tenant quota, alert webhook, Slack webhook, Jira webhook.
+**Search terms:** tenant settings, tenant logo, custom domain, verify domain, CNAME, webmail, custom mail domain, MX record, SPF, SMTP, network configuration, Slack, Jira, alert schedule, user profile visibility, event management toggle, admin alert visibility.
 
 ### Navigation
 
-`/dashboard/profile/tenant-settings`.
+Profile > Tenant Settings (`/dashboard/profile/tenant-settings`).
 
 ### Quick answer
 
-Open Profile > Tenant Settings, edit allowed tenant fields/toggles, upload logo if needed, and save.
+Open Profile > Tenant Settings, change the section you need, and use that section's `Save changes`. A custom domain needs its DNS records in place and must show `Verified` before custom webmail can be turned on.
 
 ### Steps
 
-  1. Open Profile > Tenant Settings.
-  2. Review tenant overview, licenses, quota, and location.
-  3. Toggle edit if available.
-  4. Update phone/country/city/state where allowed.
-  5. Upload or delete tenant logo if needed.
-  6. Connect or reconnect configured Slack/Jira alert webhooks where available.
-  7. Toggle profile visibility or event management where available.
-  8. Save changes.
+  1. Open Profile > Tenant Settings and review the overview, licenses, and quota.
+  2. Update contact details and save.
+  3. To use your own domain, enter it in `Custom Domain`, add the shown DNS records at your DNS provider, save, and verify until the status is `Verified`.
+  4. To host mail on that domain, turn on `Use Custom Domain for Webmail`, add the mail DNS records (MX, SPF, webmail A record), and save. Mail uses the root of the domain, for example `mail.acme.com` for `app.acme.com`.
+  5. In `Network Configuration`, enter the account mail and SMTP details, use `Verify Configuration`, and save.
+  6. In `Alert Integrations`, enter the Slack or Jira app credentials and use `Connect`.
+  7. Choose the `Alert Schedule` and set the `Privacy & Access` toggles, then save with the privacy section's `Save changes`.
 
 ### Troubleshooting
 
-If fields are read-only or hidden, check role, license, free-only status, and tenant permissions.
+- Domain stays `Unverified`: DNS changes can take time to propagate; check every listed record, including the sub-tenant wildcard record when shown.
+- Webmail toggle unavailable: the custom domain must be verified first. Sub-tenants see the primary organization's setting as read-only.
+- SMTP verification fails after saving: re-enter the account mail password before saving `Network Configuration`.
+- `Connect` disabled: save the tenant's Slack or Jira client credentials first.
+- Fields read-only or hidden: check role, license, free-only status, and whether the tenant is a sub-tenant.
+
+Full instructions are in [Tenant Settings](user_manual/orion_core.md#tenant-settings).
 
 ## User Management And Create New User
 
@@ -1498,7 +1670,7 @@ An administrator's full-system **index.html** has Overview, Account details, Con
 - Modified, unsupported, or incompatible encrypted payloads are rejected. Cross-installation import needs compatible encryption-key configuration managed by the operator.
 - A busy job, missing disk space, or a recovery requiring manual intervention needs resolution before another attempt.
 
-A tenant restore affects its recovery scope; a system restore places the whole site in maintenance. A restore replaces current data rather than merging later changes. See [Backup and Restore](user_manual.md#backup-and-restore) for permissions, statistics, rollback, and recovery instructions.
+A tenant restore affects its recovery scope; a system restore places the whole site in maintenance. A restore replaces current data rather than merging later changes. See [Backup and Restore](user_manual/orion_core.md#backup-and-restore) for permissions, statistics, rollback, and recovery instructions.
 
 ## Audit Logs
 
@@ -1658,7 +1830,7 @@ Case access depends on role and case-management permission. Analysts have narrow
 
 Privileged app-wide configuration, branding images, logos, app name, language, data-source URLs, adversary URLs, pricing URLs, account mail, SMTP host, SMTP port, SMTP password, alert webhook OAuth credentials, AI toggle, documentation toggle, help toggle, whistle blowing toggle, network behavior toggles, login imagery, email-flow prerequisites, and system branding changes.
 
-**Search terms:** system settings, SMTP settings, account mail, branding, app logo, AI toggle, documentation toggle, whistle blowing, pricing URL, alert webhook, Slack OAuth, Jira OAuth.
+**Search terms:** system settings, SMTP settings, account mail, branding, app logo, AI toggle, documentation toggle, whistle blowing, pricing URL, alert webhook, Slack OAuth, Jira OAuth, onion address, Tor address.
 
 ### Navigation
 
@@ -1683,6 +1855,8 @@ Open Profile > System Settings, select Edit, update required configuration/brand
 ### Troubleshooting
 
 If Add User or reset email is disabled/failing, confirm Account Mail and SMTP fields. If AI/docs/whistle links are hidden, check system toggles.
+
+The root administrator (`Platform Settings > Configuration`) and primary-tenant maintainers (`Branding > Tenant identity`) can select `Assign Tor address` next to `Onion Address` to publish the tenant at a new `.onion` address. Each assignment replaces the previous address, so old onion links stop working. See {ref}`Tenant Onion Addresses <tenant-onion-addresses>`.
 
 ## Static Images And Branding
 
@@ -1771,6 +1945,8 @@ Open the relevant sidebar/profile support item; for Help & Support, fill email, 
 ### Troubleshooting
 
 If a link is missing, check System Settings feature toggles and license.
+
+`Whistle Blowing` opens the Orion Leaks reporting portal; see [Orion Leaks](user_manual/orion_leaks.md).
 
 ## Subscription, Payment, Trial, And Locked Modules
 

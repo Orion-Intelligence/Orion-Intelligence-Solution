@@ -157,7 +157,7 @@ Do not place real credentials in documentation, examples, screenshots, or commit
 
 The optional `-ip` prefix updates `SWARM_URL` to the current local IP before the selected command runs. Use it only when other services need to reach this workstation by LAN address rather than loopback.
 
-Production rebuilds can also accept `-full` as the third argument: `./run.sh build -p -full`. In that mode the script force-recreates production compose services after build and pull steps. Production mode also enables the maintenance flag while rebuilding, validates `client/build/assets/data/map/world.json`, tests the running NGINX config with `nginx -t`, reloads NGINX, waits for the configured public server, and then disables maintenance mode.
+`./run.sh build -p` is the fast production update: it builds the client and restarts only the `web` container, which picks up the bind-mounted backend code and the new client build. It skips dependency install (unless `package-lock.json` changed), linting, image builds, and the NGINX and Caddy restart. `./run.sh build -p -full` is the full rebuild: it installs dependencies, lints, builds the images, force-recreates the production compose services, and restarts NGINX and Caddy. Use `-full` after changes to `.env`, the compose file, a Dockerfile, backend files outside `orion/`, `routes/` and `migrations/`, or the NGINX config. Production mode also enables the maintenance flag while rebuilding, validates `client/build/assets/data/map/world.json`, tests the running NGINX config with `nginx -t`, reloads NGINX, waits for the configured public server, and then disables maintenance mode.
 
 ### `build` Flags
 
